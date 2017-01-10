@@ -1,0 +1,290 @@
+body {
+	padding-bottom: 30px;
+}
+
+#header {
+	background-color: #333333;
+	border-bottom-width: 0px;
+}
+
+#header .container {
+	height: 90px;
+}
+
+.navbar-brand {
+	height: 100%;
+}
+
+.main-menu {
+	margin-left: 10px;
+	padding: 20px 0px;
+}
+
+.menu {
+	color: white !important;
+}
+
+#user-info {
+	display: none;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+#login-btn {
+	background: #28B571;
+	border-color: #FFFFFF;
+}
+
+#user-suggestions, #distributor-suggestions {
+	position: absolute;
+	z-index: 10;
+	top: 35px;
+	width: 90%;
+ 	left: 14px;
+ 	display: none;
+}
+
+
+.rmv-marg-top {
+}
+
+#report-result {
+	height: 480px;
+}
+
+.footer {
+	background-color: #333333;
+  	color: white;
+  	padding: 10px;
+  	position: relative;
+  	margin-top: 30px;
+  	bottom: 0;
+  	width: 100%;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.ticket-data {
+	border-color: #FFF;
+}
+
+.report-sidebar {
+	background: rgb(220, 255, 220);
+	padding: 10px 5px;
+	border: 1px solid rgb(119, 133, 121);
+	margin-bottom: 10px;
+}
+
+.report-sidebar h3 {
+	text-align: center;
+	margin-top: 10px;
+	color: rgb(81, 77, 78);
+	font-size: x-large;
+	text-transform: uppercase;
+}
+
+.report-sidebar .section {
+	padding: 10px;
+	border-top: 2px solid rgb(229, 222, 223);
+}
+
+.report-sidebar .header {
+	font-size: medium;
+	color: rgb(255, 148, 4);
+	font-weight: bold;
+	margin-left: 10px;
+  	margin-top: 5px;
+  	margin-bottom: 0px;
+}
+
+.report-sidebar .section .item {
+	margin-left: 40px;
+}
+
+.report-sidebar a {
+	color: rgb(81, 77, 78);
+}
+
+.report-sidebar .item {
+	margin: 10px;
+}
+
+.sidebar-links .link {
+	padding: 5px;
+	text-align: center;
+	font-size: 15px;
+	border: 1px solid rgb(119, 133, 121);
+	margin-bottom: 10px;
+
+	background: -webkit-linear-gradient(white, rgb(119, 133, 121)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, rgb(119, 133, 121)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, rgb(119, 133, 121)); /* For Firefox 3.6 to 15 */
+    background: -webkit-linear-gradient(white, rgb(119, 133, 121)); /* Standard syntax (must be last) */
+
+}
+
+.sidebar-links .link a {
+	display: block;
+	color: rgb(255, 148, 4);
+	text-shadow: 2px 0px 3px #fff;
+  	-moz-text-shadow: 0 0 2px #000;
+  	-webkit-text-shadow: 0 0 2px #000;
+  	-o-text-shadow: 0 0 2px #000;
+}
+
+.list-links {
+	background: rgb(245, 218, 173);
+	padding: 10px;
+	margin: 10px 0px;
+	text-align: center;
+	border: 1px solid rgb(119, 133, 121);
+	border-right: none;
+	border-left: none;
+}
+
+.overview-text {
+	width: 95%;
+	padding: 4px 10px;
+	border: 1px solid black;
+	height: 30px;
+	box-shadow: inset 1px 1px 0px 0px #ccc;
+}
+
+.overview-text .error {
+	color: red;
+}
+
+.overview-text .success {
+	color: green;
+}
+
+.compute-button {
+	float: right;
+	margin: 20px 0px;
+	width: 20%;
+	height: 32px;
+	border: 1px solid rgb(119, 133, 121);
+  	background: -webkit-linear-gradient(white, rgb(119, 133, 121));
+  	background: -o-linear-gradient(white, rgb(119, 133, 121));
+  	background: -moz-linear-gradient(white, rgb(119, 133, 121));
+  	background: -webkit-linear-gradient(white, rgb(119, 133, 121));
+  	color: rgb(255, 148, 4);
+  	text-shadow: 2px 0px 3px #fff;
+  	-moz-text-shadow: 0 0 2px #000;
+  	-webkit-text-shadow: 0 0 2px #000;
+  	-o-text-shadow: 0 0 2px #000;
+}
+
+#ntl-table {
+	width: 90%;
+  	margin: 0 auto;
+}
+
+#ntl-table * {
+	padding: 10px;
+	border: 1px solid;
+}
+
+#usapan-table {
+	width: 100%;
+	margin: 0 auto;
+}
+
+#usapan-table * {
+	padding: 10px 3px;
+	vertical-align: top;
+}
+
+#usapan-table tr {
+	border-bottom: 1px solid;
+}
+
+.overview .form-group {
+	margin-bottom: 0px;
+}
+
+.detail-overview {
+	margin-bottom: 0px;
+}
+
+.detail-overview dt {
+	font-weight: normal;
+	text-align: left;
+	width: 100px;
+}
+
+.detail-overview dt:after {
+	content: ":";
+	float: right;
+}
+
+.detail-overview dd {
+	margin-left: 105px;
+}
+
+.rmv-margin-bottom {
+	margin-bottom: 0px;
+}
+
+.overview-projected-income {
+	display: inline;
+	padding-left: 6px;
+}
+
+.overview-projected-income input {
+  	margin: 0px 5px;
+}
+
+.quick-stats {
+	margin-bottom: 30px;
+}
+
+.quick-stats .form-group {
+  margin-bottom: 5px;
+}
+
+#report-form {
+	text-align: center;
+}
+
+#report-form label {
+	float: left;
+	margin-left: 10px;
+	font-weight: normal;
+}
+
+.report-sidebar a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#report-title {
+	text-align: left;
+}
+
+.right-dashboard ul {
+ 	display: inline-block;
+	padding: 0px 45px;
+	vertical-align: top;
+}
+
+#social-media-links {
+	padding-top: 8px;
+	padding-right: 0px;
+}
+
+#social-media-links img {
+  	width: 30px;
+}
+
+p.header a {
+	color: rgb(255, 148, 4);
+}
+
+li .sub-item {
+	margin-left: 30px;
+}
