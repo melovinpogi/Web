@@ -1,0 +1,21 @@
+Configuration in sendmail.ini
+
+path  c:\xampp\sendmail\sendmail.ini
+
+Configurations
+
+[sendmail]
+
+smtp_server=smtp.gmail.com
+smtp_port=25
+error_logfile=error.log
+debug_logfile=debug.log
+auth_username=myemail@gmail.com
+auth_password=yourgmailpassword
+force_sender=myemail@gmail.com
+in php.ini
+
+pathc:\xampp\xampp\php\php.ini
+
+[mail function]
+sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
