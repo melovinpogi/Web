@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPIC Messenger</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/ipic/css/messenger.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="http://localhost:8080/ipic/images/ipic.ico" type="image/gif">
+
+    <style>
+  .modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+}
+  </style>
+</head>
+ <audio id="notif_audio">
+    <source src="http://localhost:8080/ipic/sounds/notify.ogg" type="audio/ogg">
+    <source src="http://localhost:8080/ipic/sounds/notify.mp3>" type="audio/mpeg">
+    <source src="http://localhost:8080/ipic/sounds/notify.wav" type="audio/wav">
+</audio>
+ 
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="fa fa-list"></span> Online
+                        </div>
+                         <a id="logout" href="#" class="btn btn-link"><span class="fa fa-sign-out"></span> <small>Sign Out</small></a>
+                         <a id="cp" href="#" class="btn btn-link"><span class="fa fa-key"></span> <small>Change Password</small></a>
+                        <div class="list-group">
+                           <!-- List of online users -->
+                        </div>
+                    </div>  
+                </div>
+                <div id="conversation" class="col-md-9 col-sm-9" style="height: 500px;">
+                    <!-- Conversation  -->
+                </div>
+                <div class="row">
+                    <div class="col-md-9 col-sm-9 col-xs-9 col-md-offset-3 col-sm-offset-3">
+                        <form action="/" method="post" id="chat_form" style="display:none;" autocomplete="off">
+                            <input type="text" class="form-control" name="message" id="message" placeholder="Your message..." size="50" autofocus />&nbsp;
+                            <input class="btn btn-primary" type="submit" id="send_message" value="Send" />
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog" backdrop="">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                </div>
+                <div class="modal-body">
+                 <!--  <form role="form"> -->
+                    <div class="form-group">
+                      <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                      <input type="text" class="form-control" id="usrname" placeholder="Enter Username" required="" value="" autofocus>
+                    </div>
+                    <div class="form-group">
+                      <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                      <input type="password" class="form-control" id="psw" placeholder="Enter password" required="" value="">
+                    </div>
+                    <div class="checkbox">
+                      <!-- <label><input type="checkbox" value="" checked>Remember me</label> -->
+                    </div>
+                    <button id="btn-login" class="btn btn-default btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+                  <!-- </form> -->
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+          </div> 
+
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+
+         
+            $("#conversation").niceScroll();
+             // Connecting to socket.io
+            var socket = io.connect('http://localhost:3000');
+            var session_user = 0;
+            var recipient = 0;
+            var user;
+            var name;
+            var username = 'You';  // The username is requested, sent to the server and displayed in the title
+            var idle = 0;
+
+              /******* Events *******/
+
+            //Left Panel
+            $(".list-group ").click(function(){
+                recipient = $(this).find("a").attr("id");
+                name = $(this).find("a").text();
+                $("#" + recipient + "").removeClass("active").addClass("active");
+                GetConversation(session_user,recipient);
+                AutoScroll();
+                $("#chat_form").show();
+            });
+
+            // When the form is sent, the message is sent and displayed on the page
+            $('#chat_form').submit(function () {
+                var message = $('#message').val();
+                socket.emit('message', message, $.cookie("username") + ' to' + name); // Sends the message to the others
+                insertMessage(username, message); // Also displays the message on our page
+                if( idle > 60 ){
+                    socket.emit('recon', $.cookie("username") );
+                    console.log("recon")
+                }
+                idle = 0;
+                console.log(idle)
+                $('#message').val('').focus(); // Empties the chat form and puts the focus back on it
+                return false; // Blocks 'classic' sending of the form
+            });
+
+            //Logout
+            $("#logout").click(function(){
+                socket.emit('forcedisconnect', $.cookie("username"));
+                $.removeCookie("userid");
+                $.removeCookie("username");
+                window.location.reload(true)
+            });
+
+            /*************************/          
+
+            console.log( $.cookie("userid") )
+            var timer = setInterval(IDLE, 1000)
+
+            // When a message is received it's inserted in the page
+            socket.on('message', function(data) {
+                insertMessage(name, data.message);
+            });
+
+            // When a new client connects, the information is displayed
+            if ( $.cookie("username") !== '' ){
+                socket.emit('new_client', $.cookie("username"));
+            }
+            
+
+            //Check if user is idle
+            //socket.emit('idle', $.cookie("username") )
+
+            /*Call functions*/
+            Session();
+            if( typeof $.cookie("userid") == 'undefined'){
+               Login();
+            }else{
+                session_user = $.cookie("userid");
+                $("#usrname").val( $.cookie("username") );
+                onlineUsers( $.cookie("userid") );
+                
+            }
+
+            
+
+            //IDLE
+            function IDLE(){    
+                idle = idle + 1
+               if( idle == 60 ){
+                    socket.emit('idle', $.cookie("username"),idle);
+                }
+                //console.log(idle)
+            }
+
+            function Status(userid){
+                $.ajax({
+                    url: 'http://localhost:8080/ipic/ajax/UpdateStatus.php',
+                    method: 'POST',
+                    data: {userfrom: userid},
+                    //dataType: 'json',
+                    success: function(data) {
+                        //
+                    }
+                });   
+            }
+          
+             // Adds a message to the page
+            function insertMessage(username, message) {
+                 $.ajax({
+                    url: 'http://localhost:8080/ipic/ajax/SendMessage.php',
+                    method: 'POST',
+                    data: {userfrom: session_user ,userto: recipient,msg: message},
+                    //dataType: 'json',
+                    success: function(data) {
+                        $('#conversation').append('<strong>' +  username + '</strong>: ' + message + '<br>');
+                        AutoScroll();
+                        $('#notif_audio')[0].play();
+                    }
+                });   
+            }
+
+            function AutoScroll(){
+                var height = 0;
+                $('#conversation').each(function(i, value){
+                    height += parseInt($(this).height());
+                });
+
+                height += '';
+
+                $('div').animate({scrollTop: height + 100});
+            }  
+
+          
+            function Login(){
+                
+                if( Session() !== 0 ){
+                    return false;
+                }
+                else{
+                    $('#myModal').modal({
+                        keyboard: false,
+                        backdrop: "static"
+                    });
+                }
+               
+
+                $("#btn-login").click(function(){  
+                    $.ajax({
+                        url: 'http://localhost:8080/ipic/ajax/Login.php',
+                        method: 'POST',
+                        data: {username: $("#usrname").val(),password: $("#psw").val()},
+                        timeout:3000,
+                        dataType: 'json',
+                            success: function(data) {
+                                if(data == 0 ){
+                                    $(".modal-header").html("<p style='color:red'>Username/Password is incorrect.</p>");
+                                }else{
+                                    $('#myModal').modal('hide');
+                                    session_user = data;
+                                    user = $("#usrname").val();
+
+                                    //Set cookie
+                                    $.cookie("userid", session_user, { expires : 5 });
+                                    $.cookie("username", $("#usrname").val(), { expires : 5 });
+                                    onlineUsers(data);
+
+                                    //Socket IO
+                                    socket.emit('new_client', $("#usrname").val());
+                                    document.title = $("#usrname").val() + ' - ' + document.title;
+                                }
+                            },
+                            error: function(request, status, error) {
+                               alert(request + ' ' + status + ' ' +  error);
+                            }
+                    });
+                });
+            }
+
+
+            function onlineUsers(userid){
+                 $.ajax({
+                    url: 'http://localhost:8080/ipic/ajax/Users.php',
+                    method: 'POST',
+                    data: {userid: userid},
+                    success: function(data) {
+                        var dataObj = JSON.parse(data);
+
+                        if(dataObj.loggedin == 'y'){
+                            var style = "style='color:green;'";
+                        }else{
+                            var style = "";
+                        }
+
+                        $(".list-group").html('<a href="#" id="' + dataObj.user_id +  '" class="list-group-item"> ' 
+                                                + '<span class="fa fa-user" ' + style + '></span> ' + dataObj.username + '</a>');
+                    },
+                    error: function(request, status, error) {
+                       alert(request + ' ' + status + ' ' +  error);
+                      }
+                });
+            }
+
+             function Session(){
+                var session = 0;
+                 $.ajax({
+                    url: 'http://localhost:8080/ipic/ajax/Session.php',
+                    method: 'GET',
+                    cache: false,
+                    success: function(data) {
+                        session = data;
+                        console.log(data)
+                    },
+                    error: function(request, status, error) {
+                       alert(request + ' ' + status + ' ' +  error);
+                      }
+                });
+
+                  return session;
+            }
+
+            function GetConversation(userfrom,userto){
+                 $.ajax({
+                    url: 'http://localhost:8080/ipic/ajax/GetMessage.php',
+                    method: 'POST',
+                    data:{userfrom: userfrom,userto: userto},
+                    cache: false,
+                    success: function(data) {
+                        $("#conversation").html(data);
+                    },
+                    error: function(request, status, error) {
+                       alert(request + ' ' + status + ' ' +  error);
+                      }
+                });
+            }
+
+        </script>
+    </body>
+</html>
