@@ -1,0 +1,5 @@
+# Provide Specific Index Page (Set the default handler)
+DirectoryIndex index.php constants.php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

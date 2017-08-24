@@ -1,0 +1,198 @@
+#error-msg{
+	display: none;
+}
+.help-block{
+	color: red;
+}
+#veteranz-modal button, #question-modal button{
+	background-color: #fed136;
+	border-color: #f6bf01;
+    color: #fff;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#tbody tr:hover{
+	background-color: #fed136;
+}
+#summary{
+	display: none;
+}
+#next{
+	display: none;
+}
+
+#loading{
+    display: none;
+}
+
+
+.popover a{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.badge{
+    background-color: red;
+}
+
+
+.dropdown-menu{
+    background-color: black;
+    border-radius: 5px !important;
+}
+
+.dropdown .navbar-default .navbar-nav>.open>a:hover,a:focus {
+    background-color:  #fed136 !important;
+    color: white !important;
+    border-radius: 5px !important;
+}
+
+#orders{
+    height: 350px;
+    overflow: scroll;
+    margin: 1%;
+}
+
+
+/*Loading Spin*/
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+/*Bouncing badge*/
+
+.badge-holder,#checkout,#checkout2,#move-to-orders{
+    -webkit-animation: jump 2s infinite;
+    -moz-animation: jump 2s infinite;
+    -ms-animation: jump 2s infinite;
+    -o-animation: jump 2s infinite;
+    animation: jump 2s infinite;
+}
+
+@-webkit-keyframes jump {
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+    40% {-webkit-transform: translateY(-30px);}
+    60% {-webkit-transform: translateY(-15px);}
+} 
+ 
+@keyframes jump {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+} 
+ 
+/*
+ * Adding the animation to our element
+*/
+.badge-holder,#checkout,#checkout2,#move-to-orders {
+    -webkit-animation-name: jump;
+    animation-name: jump;
+}
+
+
+
+/*
+ * Pulse animation
+*/
+ 
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    50% { -webkit-transform: scale(1.1); }
+    100% { -webkit-transform: scale(1); }
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+
+/*
+ * FadeIn animation
+*/
+ 
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+ 
+/*
+ * FadeOut animation
+*/
+ 
+@-webkit-keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+@keyframes fadeOut{
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
+
+
+/*
+ * Flash animation
+*/
+ 
+@-webkit-keyframes flash {
+    0%, 50%, 100% {opacity: 1;}
+    25%, 75% {opacity: 0;}
+}
+@keyframes flash {
+    0%, 50%, 100% {opacity: 1;}
+    25%, 75% {opacity: 0;}
+}
+.flash {
+    -webkit-animation-name: flash;
+    animation-name: flash;
+}
+
+
+
+/*
+ * Shake animation
+*/
+ 
+@-webkit-keyframes shake {
+    0%, 100% {-webkit-transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+}
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+    20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+.shake {
+    -webkit-animation-name: shake;
+    animation-name: shake;
+}
