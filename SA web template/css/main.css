@@ -1,0 +1,427 @@
+﻿.fc-event-skin
+{
+    cursor : default;
+}
+.fc-header-left 
+{
+    padding-left:10px!important;
+}
+.fc-header-right 
+{
+    padding-right:10px!important;
+}
+.jarviswidget #calendar,.jarviswidget .fc-header-title h2 {
+    margin-top: 0;
+}
+.jarviswidget .fc-header-title h2
+{
+    margin-left:0;
+}
+.textLeft
+{
+    text-align:left!important;
+}
+.breadcrumb li:hover
+{
+    cursor:pointer;
+}
+
+#left-panel 
+{
+    /*position:fixed;*/    
+}
+.btn-primary.active {
+background-color: #3E8927;
+border-color: #316D1F;
+}
+.ui-spinner-up {
+background: #1A6FBC;
+}
+.smart-style-3 .dropdown-menu {
+background: #FFFFFF;
+}
+/*data table*/
+.failed td
+{
+    color: white;    
+}
+/*Date Range*/
+.calendar-date,.daterangepicker td, .daterangepicker th
+{
+    border-radius: 0;    
+}
+.calendar-date thead th.prev {
+left: 0;
+border-right: 1px solid;
+}
+.calendar-date thead th.next {
+border-left: 1px solid;
+right: 0;
+}
+.calendar-date thead tr:first-child {
+border-bottom: 1px solid!important;
+}
+.calendar-date thead th select
+{
+color:#555;    
+}
+.calendar-date thead th {
+border-bottom: none!important;
+color: #fff;
+font-weight: 600;
+line-height: 35px!important;
+height: 35px!important;
+padding: 0!important;
+text-align: center;
+}
+.calendar-date table tr td {
+border-bottom: 1px solid #eee;
+border-right: 1px solid #eee;
+}
+
+.daterangepicker .ranges li {
+  color: #E9781D;
+}
+.daterangepicker .ranges li.active, .daterangepicker .ranges li:hover {
+  background: #E9781D;
+  border: 1px solid #E9781D;
+}
+.smart-style-3 .calendar-date thead tr:first-child {
+background: #E68A36!important;
+border-bottom-color: #A56D3A!important;
+}
+.smart-style-3 .calendar-date thead tr {
+background: #CA7838;
+}
+.smart-style-3 .calendar-date thead th.next, .smart-style-3 .calendar-date thead th.prev {
+border-color: #A56D3A;
+}
+.daterangepicker td.in-range {
+background: #FAE0CC;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover {
+background-color: #E68A36;
+border-color: #E68A36;
+}
+.smart-style-3 .calendar-date thead th.next:hover, .smart-style-3 .calendar-date thead th.prev:hover {
+background: rgba(255,255,255,.2);
+}
+/*END of Date Range*/
+
+.tab-pane .form-actions
+{
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -23px;    
+}
+.legendColorBox div>div {
+border-radius: 0%;
+-webkit-border-radius: 0;
+-moz-border-radius: 0%;
+}
+textarea.form-control
+{
+    resize:none!important;    
+}
+.TableDevelopers img,.TableDevelopers tr td:first-child
+{
+    width: 80px;    
+}
+.TableDevelopers td
+{
+    vertical-align:middle;    
+}
+.keyperson-list img,.keyperson-list tr td:first-child img
+{
+    height: 50px;
+    width: 55px;
+}
+.keyperson-list td
+{
+    vertical-align:middle;    
+}
+.jarviswidget>header
+{
+    -moz-border-radius: 0;
+    -khtml-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    line-height: normal;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);
+    -moz-box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);
+    -webkit-box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);    
+}
+.tree li .Base span:hover,.tree li .UserGroup span:hover,.tree .IssueType span:hover,.tree .TicketFilter span:hover {
+background: #FDDFB3!important;
+border: 1px solid #FAA937;
+color: #000;
+cursor:pointer;
+}
+.select2-hidden-accessible 
+{
+    display:none;    
+}
+.has-error .select2-choice, .has-error .select2-choices {
+border-color: #b94a48!important;
+}
+.profile-pic>img 
+{
+    width: 100%;
+    max-width: none;    
+}
+.form-control:focus {
+    border-color: #66afe9!important;
+}
+#ribbon
+{
+    box-shadow: 0 .0625em .3125em rgba(0,0,0,.35)    
+}
+a:hover 
+{
+    cursor:pointer;    
+}
+.required:before
+{
+    content:"* ";
+    color:red;
+}
+.smart-style-3 nav ul ul ul li a {
+    padding-left: 58px!important;
+}
+.smart-style-3 nav ul ul ul ul li a {
+    padding-left: 78px!important;
+}
+.smart-style-3 nav ul ul ul ul li a {
+    padding-left: 98px!important;
+}
+/*------------------------------------------------------------------
+[ Back to Top / #back-to-top ]
+*/
+#back-to-top {
+	position: fixed;
+	padding: 0;
+	right: 0px;
+	bottom: -3px;
+	z-index: 1001;
+	width: 38px;
+	height: 46px;
+	display: block;
+	background: #222;
+	background: rgba(0, 0, 0, 0.75);
+	text-align: center;
+	line-height: 45px;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	cursor: pointer;
+	font-size: 30px;
+	-webkit-transition: all .1s linear 0s;
+	transition: all .1s linear 0s;
+}
+#back-to-top:hover {
+	bottom: 0px;
+	background: #646464;
+	color: #E4E4E4;
+}
+#back-to-top i {
+	color: #fff;
+	position: relative;
+	top: -5px;
+}
+/*------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------*/
+/*Datatables*/
+.trFilter .hasinput
+{
+    width:100%    
+}
+
+.trFilter .form-control
+{
+    color:#555!important; 
+    width: 100%;   
+}
+.trFilter input.search_init,.trFilter select.search_init,.trFilter .fa {
+	color: #999;
+}
+.dt-toolbar>:first-child .DTTT, .dt-toolbar>:first-child .dataTables_filter>:only-child, .dt-toolbar>:first-child .dataTables_length, .dt-toolbar>:first-child .pagination {
+    float:right!important;
+}
+tr.odd 
+{
+    background-color: #E9E9E9;
+	-webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out;
+    -o-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out;
+}
+
+.table-dashboard thead tr th, .table-dashboard tbody tr td
+{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-detail tbody tr:nth-child(odd) 
+{
+    background-color: white;
+    -webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out;
+    -o-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out;
+}
+
+.table-detail tbody tr:nth-child(even) 
+{
+    background-color: #EEEEEE;
+    -webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out;
+    -o-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out;
+}
+tr.even 
+{
+    background-color: white;
+	-webkit-transition: background 0.2s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out;
+    -o-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out;
+}
+tr.even:hover,tr.odd:hover ,.table-detail tbody tr:hover
+{
+   background-color:#FFBC41!important;
+   cursor:pointer;
+}
+/*------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------*/
+/*Animation*/
+  .animation-delay1 {
+  animation-delay: 0.1s;
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  -ms-animation-delay: 0.1s;
+  -o-animation-delay: 0.1s;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+}
+
+.animation-delay2 {
+  animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  -ms-animation-delay: 0.3s;
+  -o-animation-delay: 0.3s;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+}
+
+.animation-delay4 {
+  animation-delay: 0.7s;
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  -ms-animation-delay: 0.7s;
+  -o-animation-delay: 0.7s;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+}
+
+.animation-delay5 {
+  animation-delay: 0.9s;
+  -webkit-animation-delay: 0.9s;
+  -moz-animation-delay: 0.9s;
+  -ms-animation-delay: 0.9s;
+  -o-animation-delay: 0.9s;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+}
+
+.animation-delay8 {
+  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+  -ms-animation-delay: 1.5s;
+  -o-animation-delay: 1.5s;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+  -moz-animation-name: fadeInUp;
+  -ms-animation-name: fadeInUp;
+  -o-animation-name: fadeInUp;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+}
+
+.bounceIn {
+animation-name: bounceIn;
+-webkit-animation-name: bounceIn;
+-moz-animation-name: bounceIn;
+-ms-animation-name: bounceIn;
+-o-animation-name: bounceIn;
+animation-duration: 1s;
+-webkit-animation-duration: 1s;
+-moz-animation-duration: 1s;
+-ms-animation-duration: 1s;
+-o-animation-duration: 1s;
+}
+
+@-webkit-keyframes bounceInDownSmall {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
