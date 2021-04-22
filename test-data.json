@@ -1,0 +1,53 @@
+{
+    "products": [{
+        "id": 1,
+        "itemName": "Legendary Broly",
+        "itemDescription": "Legendary Broly",
+        "itemImage": "../../assets/imgs/broly.jpg",
+        "ItemPrice": [{
+            "USD": 799,
+            "EURO": 899,
+            "CAD": 876,
+            "AUD": 877,
+            "JPY": 1000,
+            "HKD": 1500
+        }],
+        "itemEditionSize": 500,
+        "itemInStock": 400,
+        "itemScale": "1/4"
+    },
+    {
+        "id": 1,
+        "itemName": "Namek Goku",
+        "itemDescription": "Name Goku",
+        "itemImage": "../../assets/imgs/goku.jpg",
+        "ItemPrice": [{
+            "USD": 799,
+            "EURO": 899,
+            "CAD": 876,
+            "AUD": 877,
+            "JPY": 1000,
+            "HKD": 1500
+        }],
+        "itemEditionSize": 500,
+        "itemInStock": 400,
+        "itemScale": "1/4"
+    },
+    {
+        "id": 1,
+        "itemName": "Namek Goku Ex",
+        "itemDescription": "Namek Goku Ex",
+        "itemImage": "../../assets/imgs/goku2.jpg",
+        "ItemPrice": [{
+            "USD": 799,
+            "EURO": 899,
+            "CAD": 876,
+            "AUD": 877,
+            "JPY": 1000,
+            "HKD": 1500
+        }],
+        "itemEditionSize": 500,
+        "itemInStock": 400,
+        "itemScale": "1/4"
+    }]
+}
